@@ -20,7 +20,7 @@ s.author = { "Ali Moazenzadeh" => "alimz@divar.ir" }
 s.homepage = "https://github.com/ialimz/TagBar"
 
 # 6 - Replace this URL with your own Git URL from "Quick Setup"
-s.source = { :git => "git@github.com:ialimz/TagBar.git",
+s.source = { :git => "https://github.com/ialimz/TagBar.git",
 :tag => "#{s.version}" }
 
 # 8
