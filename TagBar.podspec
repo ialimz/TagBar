@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
 s.platform = :ios
 s.ios.deployment_target = '10.0'
 s.name = "TagBar"
-s.summary = "Create tags like a pro"
+s.summary = "Create customizable tags"
 s.requires_arc = true
 
 # 2
@@ -22,6 +22,9 @@ s.homepage = "https://github.com/ialimz/TagBar"
 # 6 - Replace this URL with your own Git URL from "Quick Setup"
 s.source = { :git => "https://github.com/ialimz/TagBar.git",
 :tag => "#{s.version}" }
+
+# 7
+s.framework = "UIKit"
 
 # 8
 s.source_files = "TagBar/**/*.{swift}"
