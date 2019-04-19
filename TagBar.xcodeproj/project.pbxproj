@@ -15,6 +15,7 @@
 		41C1ED962269EB1E0058FD13 /* TagBarFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1ED8F2269EB1E0058FD13 /* TagBarFlowLayout.swift */; };
 		41C1ED972269EB1E0058FD13 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1ED912269EB1E0058FD13 /* BundleExtension.swift */; };
 		41C1ED982269EB1E0058FD13 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1ED922269EB1E0058FD13 /* UIViewExtension.swift */; };
+		41C1ED9A2269F2F40058FD13 /* TagBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C1ED992269F2F40058FD13 /* TagBar.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		41C1ED8F2269EB1E0058FD13 /* TagBarFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagBarFlowLayout.swift; sourceTree = "<group>"; };
 		41C1ED912269EB1E0058FD13 /* BundleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		41C1ED922269EB1E0058FD13 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		41C1ED992269F2F40058FD13 /* TagBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TagBar.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				41C1ED7F2269EAD10058FD13 /* TagBar.h */,
 				41C1ED872269EAF30058FD13 /* TagBar.swift */,
+				41C1ED992269F2F40058FD13 /* TagBar.xib */,
 				41C1ED8B2269EB1E0058FD13 /* Cell */,
 				41C1ED902269EB1E0058FD13 /* Extensions */,
 				41C1ED8E2269EB1E0058FD13 /* FlowLayout */,
@@ -174,6 +177,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41C1ED9A2269F2F40058FD13 /* TagBar.xib in Resources */,
 				41C1ED942269EB1E0058FD13 /* TagBarCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
