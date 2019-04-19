@@ -23,8 +23,9 @@ public class TagBar: UIView {
     public weak var delegate: TagBarDelegate?
     public weak var dataSource: TagBarDataSource?
 
-    @IBOutlet var contentView: UIView!
-    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     var appearance = TagBarAppearance()
 
     public init(appearance: TagBarAppearance = TagBarAppearance(), frame: CGRect) {

@@ -11,8 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TagBar" customModule="TagBar" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="xTV-07-6hq" id="Doy-uu-3UV"/>
-                <outlet property="contentView" destination="iN0-l3-epB" id="rlf-nf-Ug5"/>
+                <outlet property="collectionView" destination="xTV-07-6hq" id="XJS-Ne-2U2"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="3jG-hH-hyH"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
