@@ -8,12 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		41C1ED812269EAD10058FD13 /* TagBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 41C1ED7F2269EAD10058FD13 /* TagBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		41C1ED882269EAF30058FD13 /* TagBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1ED872269EAF30058FD13 /* TagBar.swift */; };
+		41C1ED932269EB1E0058FD13 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1ED8A2269EB1E0058FD13 /* Models.swift */; };
+		41C1ED942269EB1E0058FD13 /* TagBarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41C1ED8C2269EB1E0058FD13 /* TagBarCell.xib */; };
+		41C1ED952269EB1E0058FD13 /* TagBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1ED8D2269EB1E0058FD13 /* TagBarCell.swift */; };
+		41C1ED962269EB1E0058FD13 /* TagBarFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1ED8F2269EB1E0058FD13 /* TagBarFlowLayout.swift */; };
+		41C1ED972269EB1E0058FD13 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1ED912269EB1E0058FD13 /* BundleExtension.swift */; };
+		41C1ED982269EB1E0058FD13 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1ED922269EB1E0058FD13 /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		41C1ED7C2269EAD10058FD13 /* TagBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TagBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C1ED7F2269EAD10058FD13 /* TagBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagBar.h; sourceTree = "<group>"; };
 		41C1ED802269EAD10058FD13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41C1ED872269EAF30058FD13 /* TagBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagBar.swift; sourceTree = "<group>"; };
+		41C1ED8A2269EB1E0058FD13 /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		41C1ED8C2269EB1E0058FD13 /* TagBarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagBarCell.xib; sourceTree = "<group>"; };
+		41C1ED8D2269EB1E0058FD13 /* TagBarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagBarCell.swift; sourceTree = "<group>"; };
+		41C1ED8F2269EB1E0058FD13 /* TagBarFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagBarFlowLayout.swift; sourceTree = "<group>"; };
+		41C1ED912269EB1E0058FD13 /* BundleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
+		41C1ED922269EB1E0058FD13 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,9 +61,48 @@
 			isa = PBXGroup;
 			children = (
 				41C1ED7F2269EAD10058FD13 /* TagBar.h */,
+				41C1ED872269EAF30058FD13 /* TagBar.swift */,
+				41C1ED8B2269EB1E0058FD13 /* Cell */,
+				41C1ED902269EB1E0058FD13 /* Extensions */,
+				41C1ED8E2269EB1E0058FD13 /* FlowLayout */,
+				41C1ED892269EB1E0058FD13 /* Models */,
 				41C1ED802269EAD10058FD13 /* Info.plist */,
 			);
 			path = TagBar;
+			sourceTree = "<group>";
+		};
+		41C1ED892269EB1E0058FD13 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				41C1ED8A2269EB1E0058FD13 /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		41C1ED8B2269EB1E0058FD13 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				41C1ED8C2269EB1E0058FD13 /* TagBarCell.xib */,
+				41C1ED8D2269EB1E0058FD13 /* TagBarCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		41C1ED8E2269EB1E0058FD13 /* FlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				41C1ED8F2269EB1E0058FD13 /* TagBarFlowLayout.swift */,
+			);
+			path = FlowLayout;
+			sourceTree = "<group>";
+		};
+		41C1ED902269EB1E0058FD13 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				41C1ED912269EB1E0058FD13 /* BundleExtension.swift */,
+				41C1ED922269EB1E0058FD13 /* UIViewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +148,7 @@
 				TargetAttributes = {
 					41C1ED7B2269EAD10058FD13 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -120,6 +174,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41C1ED942269EB1E0058FD13 /* TagBarCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +185,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41C1ED982269EB1E0058FD13 /* UIViewExtension.swift in Sources */,
+				41C1ED972269EB1E0058FD13 /* BundleExtension.swift in Sources */,
+				41C1ED962269EB1E0058FD13 /* TagBarFlowLayout.swift in Sources */,
+				41C1ED952269EB1E0058FD13 /* TagBarCell.swift in Sources */,
+				41C1ED882269EAF30058FD13 /* TagBar.swift in Sources */,
+				41C1ED932269EB1E0058FD13 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +322,7 @@
 		41C1ED852269EAD10058FD13 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -278,6 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ir.alimz.TagBar;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,6 +349,7 @@
 		41C1ED862269EAD10058FD13 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
