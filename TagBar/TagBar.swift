@@ -15,18 +15,22 @@ public protocol TagBarDelegate: class {
 
 public protocol TagBarDataSource: class {
     func numberOfItems(in tagBar: TagBar) -> Int
+    func item(forIndex index: Int) -> TagBarItem
 }
 
 public class TagBar: UIView {
 
-    var items = [TagBarItem]()
     public weak var delegate: TagBarDelegate?
     public weak var dataSource: TagBarDataSource?
 
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    var appearance = TagBarAppearance()
+
+    public var appearance = TagBarAppearance() {
+        didSet {
+            setupLayout()
+        }
+    }
 
     public init(appearance: TagBarAppearance = TagBarAppearance(), frame: CGRect) {
         self.appearance = appearance
@@ -45,11 +49,11 @@ public class TagBar: UIView {
     }
 
     func setupView() {
-        Bundle.resourceBundle.loadNibNamed("TagBar", owner: nil, options: nil)
+        Bundle.tagBarBundle.loadNibNamed("TagBar", owner: self, options: nil)
         contentView.fixInView(self)
     }
 
-    var multiLine: Bool = false {
+    public var multiLine: Bool = false {
         didSet {
             setupLayout()
         }
@@ -61,9 +65,10 @@ public class TagBar: UIView {
     }
 
     func setupCollectionView() {
+        setupLayout()
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "TagBarCell", bundle: nil), forCellWithReuseIdentifier: "TagBarCell")
+        collectionView.register(UINib(nibName: "TagBarCell", bundle: Bundle.tagBarCellBundle), forCellWithReuseIdentifier: "TagBarCell")
     }
 
     public func reloadData() {
@@ -77,6 +82,8 @@ public class TagBar: UIView {
         layout.scrollDirection = multiLine ? .vertical : .horizontal
         collectionView.collectionViewLayout = layout
         collectionView.isScrollEnabled = !multiLine
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
     }
 
 }
@@ -88,7 +95,9 @@ extension TagBar: UICollectionViewDataSource {
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagBarCell", for: indexPath) as! TagBarCell
-        cell.fill(with: items[indexPath.item])
+        if let item = dataSource?.item(forIndex: indexPath.item) {
+            cell.fill(with: item)
+        }
         return cell
     }
 }
@@ -96,7 +105,18 @@ extension TagBar: UICollectionViewDataSource {
 extension TagBar: UICollectionViewDelegate {
     private func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) as? TagBarCell else { return }
-        let item = items[indexPath.item]
-        delegate?.tagBar(self, didSelectCell: cell, for: item, atIndexPath: indexPath)
+        if let item = dataSource?.item(forIndex: indexPath.item) {
+            delegate?.tagBar(self, didSelectCell: cell, for: item, atIndexPath: indexPath)
+        }
+    }
+}
+
+extension TagBar: UICollectionViewDelegateFlowLayout {
+    private func collectionView(_: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        guard let layout = collectionViewLayout as? TagBarFlowLayout else { return .zero }
+        guard let item = dataSource?.item(forIndex: indexPath.item) else { return layout.itemSize }
+        var width = item.text?.getSize(with: appearance.textFont).width ?? 0.0
+        width += (appearance.paddingX * 2)
+        return CGSize(width: width, height: layout.itemSize.height)
     }
 }

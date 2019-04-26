@@ -43,6 +43,9 @@
                     <real key="value" value="14"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="titleLabel" destination="nCz-yB-EK2" id="grB-TL-PYc"/>
+            </connections>
             <point key="canvasLocation" x="211.19999999999999" y="152.92353823088456"/>
         </collectionViewCell>
     </objects>

@@ -9,9 +9,15 @@
 import Foundation
 
 extension Bundle {
-    static var resourceBundle: Bundle {
-        let sourceBundle = Bundle(for: TagBar.self)
-        let bundleURL = sourceBundle.url(forResource: "TagBar", withExtension: "bundle")
-        return bundleURL.flatMap(Bundle.init(url:)) ?? sourceBundle
+    static var tagBarBundle: Bundle {
+        let bundle = Bundle(for: TagBar.classForCoder())
+        let bundleURL = bundle.url(forResource: "TagBar", withExtension: "bundle")
+        return bundleURL.flatMap(Bundle.init(url:)) ?? bundle
+    }
+
+    static var tagBarCellBundle: Bundle {
+        let bundle = Bundle(for: TagBarCell.self)
+        let bundleURL = bundle.url(forResource: "TagBar", withExtension: "bundle")
+        return bundleURL.flatMap(Bundle.init(url:)) ?? bundle
     }
 }
